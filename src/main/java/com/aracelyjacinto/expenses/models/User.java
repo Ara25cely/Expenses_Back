@@ -21,6 +21,11 @@ public class User {
   @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
   @JsonManagedReference
   List<Expense> expenses;
+
+  @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+  @JsonManagedReference
+  List<Income> incomes;
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
